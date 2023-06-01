@@ -116,7 +116,8 @@ h6 {
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: rgba(23, 26, 29, 0.8);
+  background: rgba(23, 26, 29, 0.9);
+  /* background: rgba(34, 39, 43, 1); */
 }
 
 /* #header .logo {
@@ -224,7 +225,7 @@ h6 {
   font-size: 13px;
   font-weight: 500;
   text-transform: none;
-  color: #d9d9d9;
+  color: #5f5f5f;
 }
 
 .navbar .dropdown span {

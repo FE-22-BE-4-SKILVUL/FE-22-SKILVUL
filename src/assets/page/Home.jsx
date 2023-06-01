@@ -1,10 +1,13 @@
-export default function Home() {
+import Header from "../../components/Header";
+
+export const Home = () => {
   return (
     <>
-      <section id="hero"></section>
+      <Header />
+      <section className="bg-success" id="hero"></section>
     </>
   );
-}
+};
 
 // export default function Home() {
 //   return (
