@@ -1,13 +1,13 @@
 import "../assets/css/style.css";
 import { Link, useLocation } from "react-router-dom";
 import { ImPriceTag } from "react-icons/im";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import axios from "axios";
 
 export default function Pembayaran(props) {
   const location = useLocation();
-  // console.log(props, "props");
+  const [disable, setDisable] = useState("");
   console.log(location, "useLocation Hook");
 
   const nama = localStorage.getItem("nama_lengkap");
@@ -16,6 +16,13 @@ export default function Pembayaran(props) {
   const waktu = location?.state?.waktu;
   const tanggal = location?.state?.tanggal;
   const harga = location?.state?.harga;
+  // const email = localStorage.getItem("email");
+  // const alamat = localStorage.getItem("alamat");
+
+  function handleCheck(event) {
+    setDisable(event.target.checked);
+    console.log(event.target.checked);
+  }
 
   useEffect(() => {
     const midtransScriptUrl = "https://app.sandbox.midtrans.com/snap/snap.js";
@@ -37,11 +44,13 @@ export default function Pembayaran(props) {
     axios
       .post("https://be4-skilvul-production.up.railway.app/api/v1/payment", {
         nama_lengkap: nama,
-        mapel: mapel,
-        tempat: tempat,
-        waktu: waktu,
-        tanggal: tanggal,
-        harga: 25000,
+        // mapel: mapel,
+        // tempat: tempat,
+        // waktu: waktu,
+        // tanggal: tanggal,
+        // email: email,
+        // alamat: alamat,
+        harga: 50000,
       })
       .then((res) => {
         // console.log(res.data.token);
@@ -60,7 +69,7 @@ export default function Pembayaran(props) {
               <div className="col-11 col-xl-10">
                 <ol>
                   <li>
-                    <Link to="/">Beranda</Link>
+                    <Link to="/home">Beranda</Link>
                   </li>
                   <li>
                     <Link to="/program-offline">Kelas Offline</Link>
@@ -94,7 +103,10 @@ export default function Pembayaran(props) {
                     <div className="col-8 col-sm-7 col-md-7 col-lg-8 ">
                       <div className="my-3">
                         <h5 className="fw-semibold">{nama}</h5>
-                        <h6>Pelajar</h6>
+                        <h6>
+                          Pelajar
+                          {/* {alamat} */}
+                        </h6>
                       </div>
                     </div>
                   </div>
@@ -200,14 +212,14 @@ export default function Pembayaran(props) {
                 </div>
 
                 <div className="form-check my-4 ">
-                  <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                  <input className="form-check-input" type="checkbox" id="flexCheckDefault" onChange={handleCheck} />
                   <label className="form-check-label fs-6" htmlFor="flexCheckDefault">
                     Saya telah membaca dan menyetujui <span className="fw-semibold">Syarat dan Ketentuan</span>
                   </label>
                 </div>
 
                 <div className="d-flex justify-content-center my-4">
-                  <button onClick={() => bayar()} className="btn btn-danger px-5" role="button">
+                  <button onClick={() => bayar()} disabled={!disable} className="btn btn-danger px-5" role="button">
                     Bayar
                   </button>
                 </div>

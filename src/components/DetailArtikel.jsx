@@ -8,8 +8,12 @@ export default function DetailArtikel(){
                     <div className="row justify-content-center">
                     <div className="col-11">
                         <ol>
-                        <li><a href="index.html">Beranda</a></li>
-                        <li><a href="artikel.html">Artikel</a></li>
+                        <li>
+                            <Link to="/home">Beranda</Link>
+                        </li>
+                        <li>
+                            <Link to="/artikel">Artikel</Link>
+                        </li>
                         <li>Detail Artikel</li>
                         </ol>
                     </div>

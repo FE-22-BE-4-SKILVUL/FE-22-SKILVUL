@@ -164,7 +164,7 @@ export default function Home() {
                       <div id="price-information-wrapper-variant-b">
                         <div className="package-price-information">
                           <div className="package-price-information-bottom">
-                            <span className="finalPrice">Rp&nbsp;25.000</span>
+                            <span className="finalPrice">Rp&nbsp;50.000</span>
                           </div>
                         </div>
                       </div>
@@ -206,7 +206,7 @@ export default function Home() {
                       <div id="price-information-wrapper-variant-b">
                         <div className="package-price-information">
                           <div className="package-price-information-bottom">
-                            <span className="finalPrice">Rp&nbsp;25.000</span>
+                            <span className="finalPrice">Rp&nbsp;50.000</span>
                           </div>
                         </div>
                       </div>

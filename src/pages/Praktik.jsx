@@ -15,7 +15,7 @@ export default function Praktik() {
               <div className="col-11 col-xl-10">
                 <ol>
                   <li>
-                    <Link to="/">Beranda</Link>
+                    <Link to="/home">Beranda</Link>
                   </li>
                   <li>Praktik Seni</li>
                 </ol>
