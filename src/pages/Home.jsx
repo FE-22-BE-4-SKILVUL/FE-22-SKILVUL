@@ -516,11 +516,11 @@ export default function Home() {
             </div>
 
             <div className="col-lg-13 d-flex justify-content-center">
-              <a href="artikel.html">
+              <Link to="/artikel">
                 <button type="button" className="btn btn-outline-secondary btn-md my-4 fw-bold">
                   Lihat Semua
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </section>

@@ -3,6 +3,7 @@ import React ,{useState} from "react";
 import {useNavigate} from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { postSignUp } from "../redux/action";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   const dispatch = useDispatch();
@@ -158,14 +159,14 @@ export default function Register() {
                           Daftar
                         </div>
                       </div>
-                      {/* <div className="mt-2 d-flex justify-content-center text-light">
+                      <div className="mt-2 d-flex justify-content-center text-light">
                         <div className="me-2">
                           <p>Sudah Memiliki Akun?</p>
                         </div>
                         <Link to="/" className="me-2 link-danger">
                           Masuk
                         </Link>
-                      </div> */}
+                      </div>
                     </form>
                   </div>
                 </div>
