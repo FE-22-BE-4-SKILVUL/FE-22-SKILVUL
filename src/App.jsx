@@ -38,7 +38,7 @@ function App() {
             <Route path="/artikel" element={<Artikel />} />
             <Route path="/register" element={<Register />} />
             <Route path="/" element={<Login />} />
-            <Route path="/detailartikel" element={<DetailArtikel />} />
+            <Route path="/artikel/:id/detail" component={DetailArtikel} />
           </Routes>
           <Footer />
         </Router>

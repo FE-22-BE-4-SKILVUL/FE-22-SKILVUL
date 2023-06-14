@@ -1,17 +1,19 @@
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "../assets/css/style.css";
 import ArtikelList from "../components/ArtikelList";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function Artikel() {
   const [items, setItems] = useState([]);
+
   useEffect(() => {
-    fetch("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=837feb089d874ae38adb5c13e616e88c")
+    fetch("https://64513164e1f6f1bb22aab5b3.mockapi.io/artikel")
       .then((res) => res.json())
-      .then((data) => setItems(data.articles));
+      .then((data) => setItems(data));
   }, []);
+
   return (
     <>
       <Header />
